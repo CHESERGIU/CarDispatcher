@@ -16,14 +16,14 @@ namespace CarDispatcher
             };
             
             var ticket = new Car("Ford", Priority.High);
-            Add(ref cars, ticket);
-            //Console.WriteLine(cars[4].priority + " - " + cars[4].id);
+            Dispatcher.Add(ref cars, ticket);
+            Console.WriteLine(cars[4].Priority + " - " + cars[4].CarNumber);
             var ticket1 = new Car("Renault", Priority.High);
-            cars = SelectMode(cars);
-            Remove(ref cars);
-            Add(ref cars, ticket1);
+            cars = Dispatcher.SelectMode(cars);
+            Dispatcher.Remove(ref cars);
+            Dispatcher.Add(ref cars, ticket1);
 
-            //Console.WriteLine(cars[4].priority + " - " + cars[4].id);
+            Console.WriteLine(cars[4].Priority + " - " + cars[4].CarNumber);
             Console.Read();
 
         }

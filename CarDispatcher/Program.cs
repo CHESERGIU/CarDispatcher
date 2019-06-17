@@ -1,29 +1,28 @@
 ﻿using System;
-using static CarDispatcher.Car;
 
 namespace CarDispatcher
 {
     public static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Car[] cars =
+            Ticket[] tickets =
             {
-                new Car("Volkswagen", Priority.Low),
-                new Car("Opel", Priority.Low),
-                new Car("Mercedes", Priority.Low),
-                new Car("Fiesta", Priority.Low)
+                new Ticket("Volkswagen", Priority.Low),
+                new Ticket("Opel", Priority.Low),
+                new Ticket("Mercedes", Priority.Low),
+                new Ticket("Fiesta", Priority.Low)
             };
             
-            var ticket = new Car("Ford", Priority.High);
-            Dispatcher.Add(ref cars, ticket);
-            Console.WriteLine(cars[4].Priority + " - " + cars[4].CarNumber);
-            var ticket1 = new Car("Renault", Priority.High);
-            cars = Dispatcher.SelectMode(cars);
-            Dispatcher.Remove(ref cars);
-            Dispatcher.Add(ref cars, ticket1);
+            var ticket = new Ticket("Ford", Priority.High);
+            Dispatcher.Add(ref tickets, ticket);
+            Console.WriteLine(tickets[4].Priority + " - " + tickets[4].CarNumber);
+            var ticket1 = new Ticket("Renault", Priority.High);
+            tickets = Dispatcher.SelectMode(tickets);
+            Dispatcher.Remove(ref tickets);
+            Dispatcher.Add(ref tickets, ticket1);
 
-            Console.WriteLine(cars[4].Priority + " - " + cars[4].CarNumber);
+            Console.WriteLine(tickets[4].Priority + " - " + tickets[4].CarNumber);
             Console.Read();
 
         }

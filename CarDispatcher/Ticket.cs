@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace CarDispatcher
+﻿namespace CarDispatcher
 {
-    public class Car
+    public class Ticket
     {
         private readonly string id;
         private readonly Priority priority;
 
-        public Car(string id, Priority priority)
+        public Ticket(string id, Priority priority)
         {
             this.id = id;
             this.priority = priority;

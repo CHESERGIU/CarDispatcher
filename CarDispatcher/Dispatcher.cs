@@ -1,41 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CarDispatcher
 {
     public static class Dispatcher
     {
-
-        public static Car[] SelectMode(Car[] cars)
+        public static Ticket[] SelectMode(Ticket[] tickets)
         {
-            for (int i = 0; i < cars.Length; i++)
+            for (int i = 0; i < tickets.Length; i++)
             {
-                var max = cars[0];
-                if (max.Priority < cars[i].Priority)
+                var max = tickets[0];
+                if (max.Priority < tickets[i].Priority)
                 {
-                    max = cars[i];
-                    cars[i] = cars[0];
-                    cars[0] = max;
+                    max = tickets[i];
+                    tickets[i] = tickets[0];
+                    tickets[0] = max;
                 }
             }
 
-            return cars;
+            return tickets;
         }
 
-        public static void Remove(ref Car[] cars)
+        public static void Remove(ref Ticket[] tickets)
         {
-            for (int i = 0; i < cars.Length - 1; i++)
+            for (int i = 0; i < tickets.Length - 1; i++)
             {
-                cars[i] = cars[i + 1];
+                tickets[i] = tickets[i + 1];
             }
-            Array.Resize(ref cars, cars.Length - 1);
+            Array.Resize(ref tickets, tickets.Length - 1);
         }
 
-        public static void Add(ref Car[] cars, Car ticket)
+        public static void Add(ref Ticket[] tickets, Ticket ticket)
         {
-            Array.Resize(ref cars, cars.Length + 1);
-            cars[cars.Length - 1] = ticket;
+            Array.Resize(ref tickets, tickets.Length + 1);
+            tickets[tickets.Length - 1] = ticket;
         }
 
     }

@@ -13,16 +13,54 @@ namespace CarDispatcher
                 new Ticket("Mercedes", Priority.Low),
                 new Ticket("Fiesta", Priority.Low)
             };
-            
+            var payment = new Dispatcher();
+            //NEW Ticket
             var ticket = new Ticket("Ford", Priority.High);
-            Dispatcher.Add(ref tickets, ticket);
-            Console.WriteLine(tickets[4].Priority + " - " + tickets[4].CarNumber);
+            payment.Add(ref tickets, ticket);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("1 - " + car.Priority + " - " + car.CarNumber);
+            }
+            tickets = payment.SelectMode(ref tickets);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("2 - " + car.Priority + " - " + car.CarNumber);
+            }
+            payment.Remove(ref tickets);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("3 - " + car.Priority + " - " + car.CarNumber);
+            }
+            //NEW Ticket
             var ticket1 = new Ticket("Renault", Priority.High);
-            tickets = Dispatcher.SelectMode(tickets);
-            Dispatcher.Remove(ref tickets);
-            Dispatcher.Add(ref tickets, ticket1);
+            payment.Add(ref tickets, ticket1);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("4 - " + car.Priority + " - " + car.CarNumber);
+            }
+            tickets = payment.SelectMode(ref tickets);
+            payment.Remove(ref tickets);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("5 - " + car.Priority + " - " + car.CarNumber);
+            }
+            //No new tickets
+            payment.Remove(ref tickets);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("6 - " + car.Priority + " - " + car.CarNumber);
+            }
+            payment.Remove(ref tickets);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("7 - " + car.Priority + " - " + car.CarNumber);
+            }
+            payment.Remove(ref tickets);
+            foreach (var car in tickets)
+            {
+                Console.WriteLine("8 - " + car.Priority + " - " + car.CarNumber);
+            }
 
-            Console.WriteLine(tickets[4].Priority + " - " + tickets[4].CarNumber);
             Console.Read();
 
         }

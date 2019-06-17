@@ -2,9 +2,9 @@
 
 namespace CarDispatcher
 {
-    public static class Dispatcher
+    public class Dispatcher
     {
-        public static Ticket[] SelectMode(Ticket[] tickets)
+        public Ticket[] SelectMode(ref Ticket[] tickets)
         {
             for (int i = 0; i < tickets.Length; i++)
             {
@@ -20,16 +20,17 @@ namespace CarDispatcher
             return tickets;
         }
 
-        public static void Remove(ref Ticket[] tickets)
+        public Ticket Remove(ref Ticket[] tickets)
         {
             for (int i = 0; i < tickets.Length - 1; i++)
             {
                 tickets[i] = tickets[i + 1];
             }
             Array.Resize(ref tickets, tickets.Length - 1);
+            return tickets[0];
         }
 
-        public static void Add(ref Ticket[] tickets, Ticket ticket)
+        public void Add(ref Ticket[] tickets, Ticket ticket)
         {
             Array.Resize(ref tickets, tickets.Length + 1);
             tickets[tickets.Length - 1] = ticket;

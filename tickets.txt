@@ -1,0 +1,36 @@
+1 - Low - Volkswagen
+1 - Low - Opel
+1 - Low - Mercedes
+1 - Low - Fiesta
+1 - High - Ford
+
+2 - High - Ford
+2 - Low - Opel
+2 - Low - Mercedes
+2 - Low - Fiesta
+2 - Low - Volkswagen
+
+3 - Low - Opel
+3 - Low - Mercedes
+3 - Low - Fiesta
+3 - Low - Volkswagen
+
+4 - Low - Opel
+4 - Low - Mercedes
+4 - Low - Fiesta
+4 - Low - Volkswagen
+4 - High - Renault
+
+5 - Low - Mercedes
+5 - Low - Fiesta
+5 - Low - Volkswagen
+5 - Low - Opel
+
+6 - Low - Fiesta
+6 - Low - Volkswagen
+6 - Low - Opel
+
+7 - Low - Volkswagen
+7 - Low - Opel
+
+8 - Low - Opel

@@ -1,4 +1,6 @@
-﻿namespace CarDispatcher
+﻿using System;
+
+namespace CarDispatcher
 {
     public class Ticket
     {
